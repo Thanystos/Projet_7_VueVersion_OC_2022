@@ -1,7 +1,7 @@
 <template>
     <NavContainer>
         <RouterLink to="/">
-            <NavLogo src="../../src/assets/images/navLogo.png" />
+            <NavLogo :src='navlogo'/>
         </RouterLink>
         <NavLink>
             <StyledLinkContainer>
@@ -21,4 +21,6 @@
 <script setup>
     import { NavContainer, NavLogo, StyledLinkContainer, NavLink } from './Header.style';
     import { StyledLink } from '../../utils/Atoms.vue';
+    import navlogo from '../../assets/images/navLogo.png'
+    
 </script>
