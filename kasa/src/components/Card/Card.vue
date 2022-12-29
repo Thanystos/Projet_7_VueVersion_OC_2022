@@ -1,5 +1,5 @@
 <template>
-    <CardWrapper :cover="cover">
+    <CardWrapper :cover=cover>
         <CardTitle>{{ title }}</CardTitle>
     </CardWrapper>
 </template>

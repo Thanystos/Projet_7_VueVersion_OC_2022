@@ -16,7 +16,7 @@ export const CardWrapper = styled("div", cardProps)`
             rgba(255, 255, 255, 0), 
             rgba(0, 0, 0, 0.5)
         ),
-        url(${props => props.imgUrl}); // seul moyen de transmettre une prop à mon css
+        url(${props => props.imgUrl ? 'https://cdn.pixabay.com/photo/2022/01/06/22/30/new-year-6920394_1280.jpg' : props.imgUrl});
 
         @media screen and (max-width: 635px) {
             width: 335px;
@@ -33,5 +33,4 @@ export const CardTitle = styled.h2`
     margin: 0px;
     padding: 0px 20px 20px 20px;
     font-size: 18px;
-    
 `

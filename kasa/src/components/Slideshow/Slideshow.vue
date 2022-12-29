@@ -1,0 +1,36 @@
+<template>
+    <SlideContainer>
+        <SlidePrev :src=prev :pictures=pictures @click="goToPrevious()" />
+        <SlideImg :src=pictures[index] />
+        <SlideNext :src=next :pictures=pictures @click="goToNext()" />
+        <SlideNumber :pictures=pictures>
+            {{ index + 1 }}/{{ pictures.length }}
+        </SlideNumber>
+    </SlideContainer>
+</template>
+
+<script setup>
+    import { SlideContainer, SlideImg, SlidePrev, SlideNext, SlideNumber } from './Slideshow.style'
+    import prev from '../../assets/images/prev.png'
+    import next from '../../assets/images/next.png'
+
+    const index = ref(0)
+
+    const props = defineProps({
+        pictures: {
+            type: Array,
+            default: []
+        }
+    })
+
+    const goToPrevious = () => {
+        const isFirstPicture = index === 0;
+        index = isFirstPicture ? pictures.length - 1 : index - 1;
+    }
+
+    const goToNext = () => {
+        const isLastPicture = index === pictures.length - 1;
+        index = isLastPicture ? 0 : index + 1;
+    }
+
+</script>
