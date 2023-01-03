@@ -1,6 +1,6 @@
 import styled from "@magister_zito/vue3-styled-components";
 
-export const AboutWrapper = styled.div`
+const AboutWrapper = styled.div`
     display: flex;
     justify-content: center;
 
@@ -8,8 +8,9 @@ export const AboutWrapper = styled.div`
         padding-bottom: 263px;
     }
 `
+AboutWrapper.name = 'AboutWrapper'
 
-export const AboutContainer = styled.div`
+const AboutContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -20,22 +21,25 @@ export const AboutContainer = styled.div`
         width: 335px;
     }
 `
+AboutContainer.name = 'AboutContainer'
 
-export const AboutImgContainer = styled.div`
+const AboutImgContainer = styled.div`
     height: 223px;
     border-radius: 25px;
     width: 100%;
 `
+AboutImgContainer.name = 'AboutImgContainer'
 
-export const AboutImg = styled.img`
+const AboutImg = styled.img`
     filter: brightness(60%);
     object-fit: cover;
     border-radius: 25px;
     width: 100%;
     height: 223px;
 `
+AboutImg.name = 'AboutImg'
 
-export const DropDownContainer = styled.div`
+const DropDownContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -48,3 +52,6 @@ export const DropDownContainer = styled.div`
         margin-top: 19px;
     }
 `
+DropDownContainer.name = 'DropDownContainer'
+
+export { AboutWrapper, AboutContainer, AboutImgContainer, AboutImg, DropDownContainer }

@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home/Home.vue'
-import HousingView from '../views/HousingView.vue'
+import Housing from '../views/Housing/Housing.vue'
 import About from '../views/About/About.vue'
 import PageNotFound from '../views/PageNotFound/PageNotFound.vue'
 
@@ -15,7 +15,7 @@ const router = createRouter({
     {
       path: '/Fiche-Logement/:id',
       name: 'housing',
-      component: HousingView
+      component: Housing
     },
     {
       path: '/A-Propos',

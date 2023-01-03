@@ -29,7 +29,6 @@
     if(typeof(description)  == 'object') {
         equipments = [...props.description]
     }
-    console.log(equipments)
 
     const props = defineProps({
         title: {

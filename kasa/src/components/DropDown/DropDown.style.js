@@ -3,7 +3,7 @@ import colors from "../../utils/colors"
 
 const dropDownProp = { renting: Boolean, isOpen: Boolean }
 
-export const DropDownContainer = styled("div", dropDownProp)`
+const DropDownContainer = styled("div", dropDownProp)`
     max-width: ${props => props.renting ? '700px' : '1023px'};
     width: 100%;
     border-radius: ${props => props.renting ? '10px' : '5px'};
@@ -23,8 +23,9 @@ export const DropDownContainer = styled("div", dropDownProp)`
         width: ${props => props.renting ? 'calc(50% - 38px)' : '100%'}; ;
     }
 `
+DropDownContainer.name = 'DropDownContainer'
 
-export const DropDownHeader = styled("div", dropDownProp)`
+const DropDownHeader = styled("div", dropDownProp)`
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -38,27 +39,31 @@ export const DropDownHeader = styled("div", dropDownProp)`
         line-height: 30px;
     }
 `
+DropDownHeader.name = 'DropDownHeader'
 
-export const DropDownTitle = styled.h3`
+const DropDownTitle = styled.h3`
     color: white;
     padding-left: 20px;
 `
+DropDownTitle.name = 'DropDownTitle'
 
-export const DropDownArrowContainer = styled.div`
+const DropDownArrowContainer = styled.div`
     display: flex;
     align-items: center;
     width: 15.56px;
     height: 26.4px;
     padding-right: 20px;
 `
+DropDownArrowContainer.name = 'DropDownArrowContainer'
 
-export const DropDownArrow = styled.img`
+const DropDownArrow = styled.img`
     width: 15.56px;
     height: 26.4px;
     object-fit: contain;
 `
+DropDownArrow.name = 'DropDownArrow'
 
-export const DropDownDescription = styled("div", dropDownProp)`
+const DropDownDescription = styled("div", dropDownProp)`
     border-radius: ${props => props.renting ? '10px' : '5px'};
     position: relative;
         top: -10px;
@@ -72,11 +77,16 @@ export const DropDownDescription = styled("div", dropDownProp)`
         padding: 23.02px 6.91px 1.3px 11.51px;
     }
 `
+DropDownDescription.name = 'DropDownDescription'
 
-export const DropDownEquipments = styled.ul`
+const DropDownEquipments = styled.ul`
     list-style: none;
 `
+DropDownEquipments.name = 'DropDownEquipments'
 
-export const DropDownEquipment = styled.li`
+const DropDownEquipment = styled.li`
     
 `
+DropDownEquipment.name = 'DropDownEquipment'
+
+export { DropDownContainer, DropDownHeader, DropDownTitle, DropDownArrowContainer, DropDownArrow, DropDownDescription, DropDownEquipments, DropDownEquipment }

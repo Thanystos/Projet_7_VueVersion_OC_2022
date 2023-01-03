@@ -1,6 +1,6 @@
 import styled from '@magister_zito/vue3-styled-components';
 
-export const NavContainer = styled.div`
+const NavContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -19,8 +19,9 @@ export const NavContainer = styled.div`
         margin: 20px auto 16px auto;
     }
 `
+NavContainer.name = 'NavContainer'
 
-export const NavLogo = styled.img`
+const NavLogo = styled.img`
     width: 210.32px;
     height: 68px;
 
@@ -34,8 +35,9 @@ export const NavLogo = styled.img`
         width: 176.29px;
     }
 `
+NavLogo.name = 'NavLogo'
 
-export const StyledLinkContainer = styled.div`
+const StyledLinkContainer = styled.div`
     margin-left: 70px;
 
     @media screen and (max-width: 635px) {
@@ -46,8 +48,9 @@ export const StyledLinkContainer = styled.div`
         margin-left: 40px;
     }
 `
+StyledLinkContainer.name = 'StyledLinkContainer'
 
-export const NavLink = styled.div`
+const NavLink = styled.div`
     display: flex;
     justify-content: right;
     height: 34px;
@@ -62,3 +65,6 @@ export const NavLink = styled.div`
         font-size: 18px;
     }
 `
+NavLink.name = 'NavLink'
+
+export { NavContainer, NavLogo, StyledLinkContainer, NavLink }

@@ -2,7 +2,7 @@ import styled from '@magister_zito/vue3-styled-components'
 
 const slideProps = { pictures: String }
 
-export const SlideContainer = styled.div`
+const SlideContainer = styled.div`
     width: 100%;
     min-width: 335px;
     height: 415px;
@@ -13,8 +13,9 @@ export const SlideContainer = styled.div`
         width: 335px;
     }
 `
+SlideContainer.name = 'SlideContainer'
 
-export const SlideImg = styled.img`
+const SlideImg = styled.img`
     width: 100%;
     height: 415px;
     object-fit: cover;
@@ -24,8 +25,9 @@ export const SlideImg = styled.img`
         height: 255px;
     }
 `
+SlideImg.name = 'SlideImg'
 
-export const SlidePrev = styled("img", slideProps)`
+const SlidePrev = styled("img", slideProps)`
     width: 46.68px;
     height: 79.2px;
     position: absolute;
@@ -46,8 +48,9 @@ export const SlidePrev = styled("img", slideProps)`
         top: 191.465px
     }
 `
+SlidePrev.name = 'SlidePrev'
 
-export const SlideNext = styled("img", slideProps)`
+const SlideNext = styled("img", slideProps)`
     width: 46.68px;
     height: 79.2px;
     position: absolute;
@@ -67,8 +70,9 @@ export const SlideNext = styled("img", slideProps)`
         top: 191.465px
     }
 `
+SlideNext.name = 'SlideNext'
 
-export const SlideNumber = styled("div", slideProps)`
+const SlideNumber = styled("div", slideProps)`
     width: 24px;
     height: 32.4px;
     font-size: 18px;
@@ -79,3 +83,6 @@ export const SlideNumber = styled("div", slideProps)`
     color: white;
     display: ${props => props.pictures.length < 2 ? 'none' : 'block'};
 `
+SlideNumber.name = 'SlideNumber'
+
+export { SlideContainer, SlideImg, SlidePrev, SlideNext, SlideNumber }

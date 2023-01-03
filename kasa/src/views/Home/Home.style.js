@@ -1,13 +1,14 @@
 import styled from "@magister_zito/vue3-styled-components";
 import colors from "../../utils/colors";
 
-export const HomeWrapper = styled.div`
+const HomeWrapper = styled.div`
     display: flex;
     justify-content: center;
     padding-bottom: 263px;
 `
+HomeWrapper.name = 'HomeWrapper'
 
-export const HomeContainer = styled.div`
+const HomeContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,8 +18,9 @@ export const HomeContainer = styled.div`
         width: 335px;
     }
 `
+HomeContainer.name = 'HomeContainer'
 
-export const SloganContainer = styled.div`
+const SloganContainer = styled.div`
     position: relative;
     display: flex;
     justify-content: center;
@@ -32,8 +34,9 @@ export const SloganContainer = styled.div`
         margin-bottom: 22px;
     }
 `
+SloganContainer.name = 'SloganContainer'
 
-export const SloganImg = styled.img`
+const SloganImg = styled.img`
     filter: brightness(60%);
     object-fit: cover;
     border-radius: 25px;
@@ -44,8 +47,9 @@ export const SloganImg = styled.img`
         height: 111px;
     }
 `
+SloganImg.name = 'SloganImg'
 
-export const Slogan = styled.h1`
+const Slogan = styled.h1`
     position: absolute;
     color: white;
     font-size: 48px;
@@ -62,8 +66,9 @@ export const Slogan = styled.h1`
         font-size: 32px;
     }
 `
+Slogan.name = 'Slogan'
 
-export const CardsContainer = styled.div.attrs({className: 'test'})`
+const CardsContainer = styled.div.attrs({className: 'test'})`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -85,3 +90,6 @@ export const CardsContainer = styled.div.attrs({className: 'test'})`
         justify-content: space-between;
     }
 `
+CardsContainer.name = 'CardContainer'
+
+export { HomeWrapper, HomeContainer, SloganContainer, SloganImg, Slogan, CardsContainer }

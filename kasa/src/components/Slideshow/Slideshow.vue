@@ -10,6 +10,7 @@
 </template>
 
 <script setup>
+    import { ref } from 'vue';
     import { SlideContainer, SlideImg, SlidePrev, SlideNext, SlideNumber } from './Slideshow.style'
     import prev from '../../assets/images/prev.png'
     import next from '../../assets/images/next.png'

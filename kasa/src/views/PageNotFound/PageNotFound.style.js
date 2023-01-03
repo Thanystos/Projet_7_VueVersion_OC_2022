@@ -1,14 +1,15 @@
 import styled from "@magister_zito/vue3-styled-components"
 import colors from "../../utils/colors"
 
-export const NotFoundContainer = styled.div`
+const NotFoundContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
     color: #${colors.primary};
 `
+NotFoundContainer.name = 'NotFoundContainer'
 
-export const NotFoundCode = styled.h1`
+const NotFoundCode = styled.h1`
     height: 263px;
     line-height: 263px;
     font-size: 288px;
@@ -24,8 +25,9 @@ export const NotFoundCode = styled.h1`
         margin-bottom: 11px;
     }
 `
+NotFoundCode.name = 'NotFoundCode'
 
-export const NotFoundMessage = styled.h2`
+const NotFoundMessage = styled.h2`
     height: 51px;
     line-height: 25.67px;
     font-size: 36px;
@@ -38,11 +40,15 @@ export const NotFoundMessage = styled.h2`
         margin-bottom: 133px;
     }
 `
+NotFoundMessage.name = 'NotFoundMessage'
 
-export const StyledLinkContainer = styled.div`
+const StyledLinkContainer = styled.div`
     font-size: 18px;
 
     @media screen and (max-width: 635px) {
         font-size: 14px;
     }
 `
+StyledLinkContainer.name = 'StyledLinkContainer'
+
+export { NotFoundContainer, NotFoundCode, NotFoundMessage, StyledLinkContainer }

@@ -1,8 +1,8 @@
 import styled from "@magister_zito/vue3-styled-components";
 
-const cardProps = { imgUrl: String }
+const cardProps = { cover: String }
 
-export const CardWrapper = styled("div", cardProps)`
+const CardWrapper = styled("div", cardProps)`
     display: flex;
     flex-direction: column;
     justify-content: end;
@@ -16,7 +16,7 @@ export const CardWrapper = styled("div", cardProps)`
             rgba(255, 255, 255, 0), 
             rgba(0, 0, 0, 0.5)
         ),
-        url(${props => props.imgUrl ? 'https://cdn.pixabay.com/photo/2022/01/06/22/30/new-year-6920394_1280.jpg' : props.imgUrl});
+        url(${props => props.cover || 'https://cdn.pixabay.com/photo/2022/01/06/22/30/new-year-6920394_1280.jpg' });
 
         @media screen and (max-width: 635px) {
             width: 335px;
@@ -24,8 +24,9 @@ export const CardWrapper = styled("div", cardProps)`
             margin-bottom: 20px;
         }
 `
+CardWrapper.name = 'CardWrapper'
 
-export const CardTitle = styled.h2`
+const CardTitle = styled.h2`
     width: 300px;
     height: 52px;
     color: white;
@@ -34,3 +35,6 @@ export const CardTitle = styled.h2`
     padding: 0px 20px 20px 20px;
     font-size: 18px;
 `
+CardTitle.name = 'CardTitle'
+
+export { CardWrapper, CardTitle }

@@ -1,6 +1,6 @@
 import styled from "@magister_zito/vue3-styled-components";
 
-export const FooterContainer = styled.div`
+const FooterContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,13 +17,15 @@ export const FooterContainer = styled.div`
         min-width: 375px;
     }
 `
+FooterContainer.name = 'FooterContainer'
 
-export const FooterLogo = styled.img`
+const FooterLogo = styled.img`
     width: 122px;
     height: 39px;
 `
+FooterLogo.name = 'FooterLogo'
 
-export const FooterRights = styled.div`
+const FooterRights = styled.div`
     height: 46px;
     line-height: 46px;
     font-size: 24px;
@@ -37,3 +39,6 @@ export const FooterRights = styled.div`
         font-size: 18px;
     }
 `
+FooterRights.name = 'FooterRights'
+
+export { FooterContainer, FooterLogo, FooterRights }

@@ -1,7 +1,7 @@
 import styled from "@magister_zito/vue3-styled-components";
 import colors from "../../utils/colors";
 
-export const TagContainer = styled.div`
+const TagContainer = styled.div`
     width: 115px;
     height: 25px;
     border-radius: 10px;
@@ -17,11 +17,15 @@ export const TagContainer = styled.div`
         line-height: 18px;
     }
 `
+TagContainer.name = 'TagContainer'
 
-export const TagTitle = styled.h3`
+const TagTitle = styled.h3`
     font-size: 14px;
 
     @media screen and (max-width: 635px) {
         font-size: 10px;
     }
 `
+TagTitle.name = 'TagTitle'
+
+export { TagContainer, TagTitle }
