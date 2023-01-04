@@ -10,9 +10,13 @@
         </DropDownHeader>
         <DropDownDescription :renting=renting :isOpen=isOpen>
             <DropDownEquipments v-if="equipments.length !==0">
-                
+                <DropDownEquipment v-for="equipment in equipments">
+                    {{ equipment }}
+                </DropDownEquipment>
             </DropDownEquipments>
-            <span v-else>{{ props.description }}</span>
+            <span v-else>
+                {{ props.description }}
+            </span>
         </DropDownDescription>
     </DropDownContainer>
 </template>
@@ -24,9 +28,9 @@
     import arrowUp from "../../assets/images/arrowUp.png"
 
     const isOpen = ref(false)
-    const equipments = []
+    let equipments = []
 
-    if(typeof(description)  == 'object') {
+    if(typeof(props.description)  == 'object') {
         equipments = [...props.description]
     }
 
@@ -36,7 +40,6 @@
             default: 'Non spécifié'
         },
         description: {
-            type: String,
             default: 'Non spécifié'
         },
         renting: {

@@ -1,6 +1,6 @@
 import styled from '@magister_zito/vue3-styled-components'
 
-const slideProps = { pictures: String }
+const slideProps = { pictures: Array }
 
 const SlideContainer = styled.div`
     width: 100%;

@@ -1,22 +1,53 @@
 <template>
-    <RentingWrapper>
+    <PageNotFound v-if="renting === undefined" />
+    <RentingWrapper v-else>
         <RentingContainer>
             <Slideshow 
-                
+                :pictures=renting.pictures
             />
             <RentingCommonInfos>
                 <RentingLocationInfos>
                     <RentingLocationTitle>
-                        {{ value.title }}
+                        {{renting.title}}
                     </RentingLocationTitle>
                     <RentingLocationSubtitle>
-                        {{ value.location }}
+                        {{renting.location}}
                     </RentingLocationSubtitle>
                     <RentingLocationTags>
-                       
+                        <Tag v-for="tag in renting.tags"
+                            :key=tag
+                            :title=tag
+                        />
                     </RentingLocationTags>
                 </RentingLocationInfos>
+                <RentingLocationOwner>
+                    <RentingLocationOwnerInfos>
+                        <RentingLocationOwnerName>
+                            {{renting.host.name}}
+                        </RentingLocationOwnerName>
+                        <RentingLocationOwnerPictureContainer>
+                            <RentingLocationOwnerPicture :src=renting.host.picture />
+                        </RentingLocationOwnerPictureContainer>
+                    </RentingLocationOwnerInfos>
+                    <RentingLocationOwnerRating>
+                        <RentingLocationOwnerRatingImgContainer v-for="star in stars">
+                            <RentingLocationOwnerRatingImg :src=star />
+                        </RentingLocationOwnerRatingImgContainer>
+                    </RentingLocationOwnerRating>
+                </RentingLocationOwner>
             </RentingCommonInfos>
+            <DropDownContainer>
+                <DropDown
+                    title = 'Description'
+                    :description=renting.description
+                    :renting=true
+                />
+                <DropDown
+                    title = 'Équipements'
+                    :description=renting.equipments
+                    :renting=true
+                />
+            </DropDownContainer>
         </RentingContainer>
     </RentingWrapper>
 </template>
@@ -31,18 +62,25 @@
     import Slideshow from '../../components/Slideshow/Slideshow.vue'
     import Tag from '../../components/Tag/Tag.vue'
     import DropDown from '../../components/DropDown/DropDown.vue'
-    import colors from '../../utils/colors'
     import emptiedStar from '../../assets/images/emptiedStar.png'
     import filledStar from '../../assets/images/filledStar.png'
     import rentingJson from '../../assets/logements.json'
-    import { useRoute, useRouter } from 'vue-router'
+    import { useRoute } from 'vue-router'
 
     const route = useRoute()
-    const router = useRouter()
-
-    const {id: rentingId } = route.params.id
-    const rentingsList = rentingJson
+    const rentingId = route.params.id
+    const rentings = rentingJson
+    const renting = rentings.find((renting) => renting.id === rentingId)
     const stars = []
 
-        // trouver le bon index ainsi que le tableau d'étoiles ici et non dans le template 
+    if(renting != undefined) {
+        for(let i=0; i<(renting.rating); i++ ) {
+            stars[i] = filledStar;
+        }
+        for(let i=0; i<5; i++ ) {
+            if(stars[i] !== filledStar) {
+                stars[i] = emptiedStar;
+            }
+        }
+    }
 </script>

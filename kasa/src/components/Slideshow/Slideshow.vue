@@ -25,13 +25,13 @@
     })
 
     const goToPrevious = () => {
-        const isFirstPicture = index === 0;
-        index = isFirstPicture ? pictures.length - 1 : index - 1;
+        const isFirstPicture = index.value === 0;
+        index.value = isFirstPicture ? props.pictures.length - 1 : index.value - 1;
     }
 
     const goToNext = () => {
-        const isLastPicture = index === pictures.length - 1;
-        index = isLastPicture ? 0 : index + 1;
+        const isLastPicture = index.value === props.pictures.length - 1;
+        index.value = isLastPicture ? 0 : index.value + 1;
     }
 
 </script>

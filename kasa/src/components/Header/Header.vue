@@ -10,7 +10,7 @@
                 </StyledLink>
             </StyledLinkContainer>
             <StyledLinkContainer>
-                <StyledLink to="A-Propos">
+                <StyledLink to="/A-Propos">
                     A Propos
                 </StyledLink>
             </StyledLinkContainer>
