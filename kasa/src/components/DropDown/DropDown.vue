@@ -21,7 +21,7 @@
     </DropDownContainer>
 </template>
 
-<script setup>
+<script setup lang="ts">
     import { ref } from 'vue';
     import { DropDownContainer, DropDownHeader, DropDownTitle, DropDownArrowContainer, DropDownArrow, DropDownDescription, DropDownEquipment, DropDownEquipments } from './DropDown.style';
     import arrowDown from "../../assets/images/arrowDown.png"
@@ -30,21 +30,17 @@
     const isOpen = ref(false)
     let equipments = []
 
+    const props = withDefaults(defineProps<{
+        title?: string
+        description?: string | Array<string>
+        renting?: boolean
+    }>(), {
+        title: 'Non spécifié',
+        description: 'Non spécifié',
+        renting: true
+    })
+
     if(typeof(props.description)  == 'object') {
         equipments = [...props.description]
     }
-
-    const props = defineProps({
-        title: {
-            type: String,
-            default: 'Non spécifié'
-        },
-        description: {
-            default: 'Non spécifié'
-        },
-        renting: {
-            type: Boolean,
-            default: true
-        }
-    })
 </script>

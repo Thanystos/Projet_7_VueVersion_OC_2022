@@ -9,7 +9,7 @@
     </SlideContainer>
 </template>
 
-<script setup>
+<script setup lang="ts">
     import { ref } from 'vue';
     import { SlideContainer, SlideImg, SlidePrev, SlideNext, SlideNumber } from './Slideshow.style'
     import prev from '../../assets/images/prev.png'
@@ -17,12 +17,9 @@
 
     const index = ref(0)
 
-    const props = defineProps({
-        pictures: {
-            type: Array,
-            default: []
-        }
-    })
+    const props = defineProps<{
+        pictures: Array<string>
+    }>()
 
     const goToPrevious = () => {
         const isFirstPicture = index.value === 0;

@@ -6,13 +6,12 @@
     </TagContainer>
 </template>
 
-<script setup>
+<script setup lang="ts">
     import { TagContainer, TagTitle } from './Tag.style';
 
-    const props = defineProps({
-        title: {
-            type: String,
-            default: 'Non spécifié'
-        }
+    withDefaults(defineProps<{
+        title?: string
+    }>(), {
+        title: 'Non spécifié',
     })
 </script>
