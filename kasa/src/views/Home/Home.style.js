@@ -68,11 +68,11 @@ const Slogan = styled.h1`
 `
 Slogan.name = 'Slogan'
 
-const CardsContainer = styled.div.attrs({className: 'test'})`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-wrap: wrap;
+const CardsContainer = styled.div`
+    display: grid;
+    grid-gap: 60px;
+    grid-template-columns: repeat(auto-fit, minmax(335px, 1fr));
+    justify-content: center;
     width: calc(100% - 100px);
     min-width: 235px;
     border-radius: 25px;
@@ -83,11 +83,7 @@ const CardsContainer = styled.div.attrs({className: 'test'})`
         background-color: white;
         padding: 0px;
         width: 100%;
-    }
-
-    @media screen and (min-width: 1000px) {
-        flex-direction: row;
-        justify-content: space-between;
+        grid-gap: 0px
     }
 `
 CardsContainer.name = 'CardContainer'

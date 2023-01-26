@@ -89,7 +89,6 @@ const RentingLocationTags = styled.div`
     @media screen and (max-width: 900px) {
         margin-top: 10px;
     }
-
 `
 RentingLocationTags.name = 'RentingLocationTags'
 
@@ -184,43 +183,6 @@ const RentingLocationOwnerRating = styled.div`
 `
 RentingLocationOwnerRating.name = 'RentingLocationOwnerRating'
 
-const RentingLocationOwnerRatingImgContainer = styled.div`
-    width: 30px;
-    height: 30px;
-    margin-right: 10px;
-
-    @media screen and (max-width: 635px) {
-        width: 15px;
-        height: 15px;
-        margin-right: 5px;
-    }
-
-    @media screen and (min-width: 635px) and (max-width: 900px) {
-        width: 22.5px;
-        height: 22.5px;
-        margin-right: 5px;
-    }
-`
-RentingLocationOwnerRatingImgContainer.name = 'RentingLocationOwnerRatingImgContainer'
-
-const RentingLocationOwnerRatingImg = styled.img`
-    width: 30px;
-    height: 30px;
-    object-fit: contain;
-
-    @media screen and (max-width: 900px) {
-        width: 15px;
-        height: 15px;
-    }
-
-    @media screen and (min-width: 635px) and (max-width: 900px){
-        width: 22.5px;
-        height: 22.5px;
-        margin-right: 5px;
-    }
-`
-RentingLocationOwnerRatingImg.name = 'RentingLocationOwnerRatingImg'
-
 const DropDownContainer = styled.div`
     width: 100%;
     margin-top: 24px;
@@ -236,5 +198,4 @@ DropDownContainer.name = 'DropDownContainer'
 
 export { RentingWrapper, RentingContainer, RentingCommonInfos, RentingLocationInfos, RentingLocationTitle, RentingLocationSubtitle, 
 RentingLocationTags, RentingLocationOwner, RentingLocationOwnerInfos, RentingLocationOwnerName, RentingLocationOwnerPictureContainer, 
-RentingLocationOwnerPicture,RentingLocationOwnerRating, RentingLocationOwnerRatingImgContainer, RentingLocationOwnerRatingImg, 
-DropDownContainer }
+RentingLocationOwnerPicture,RentingLocationOwnerRating, DropDownContainer }

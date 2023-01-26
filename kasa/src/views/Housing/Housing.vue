@@ -4,6 +4,7 @@
         <RentingContainer>
             <Slideshow 
                 :pictures=renting.pictures
+                :boxShadow=renting.boxShadow
             />
             <RentingCommonInfos>
                 <RentingLocationInfos>
@@ -30,9 +31,7 @@
                         </RentingLocationOwnerPictureContainer>
                     </RentingLocationOwnerInfos>
                     <RentingLocationOwnerRating>
-                        <RentingLocationOwnerRatingImgContainer v-for="star in stars">
-                            <RentingLocationOwnerRatingImg :src=star />
-                        </RentingLocationOwnerRatingImgContainer>
+                        <StarList :rating=renting.rating :color=renting.color />
                     </RentingLocationOwnerRating>
                 </RentingLocationOwner>
             </RentingCommonInfos>
@@ -56,14 +55,12 @@
     import { RentingWrapper, RentingContainer, RentingCommonInfos, RentingLocationInfos, 
         RentingLocationTitle, RentingLocationSubtitle, RentingLocationTags, RentingLocationOwner, 
         RentingLocationOwnerInfos, RentingLocationOwnerName, RentingLocationOwnerPictureContainer, 
-        RentingLocationOwnerPicture, RentingLocationOwnerRating, 
-        RentingLocationOwnerRatingImgContainer, RentingLocationOwnerRatingImg, DropDownContainer } from './Housing.style'
+        RentingLocationOwnerPicture, RentingLocationOwnerRating, DropDownContainer } from './Housing.style'
+    import StarList from '../../components/StarList/StarList.vue'
     import PageNotFound from '../PageNotFound/PageNotFound.vue'
     import Slideshow from '../../components/Slideshow/Slideshow.vue'
     import Tag from '../../components/Tag/Tag.vue'
     import DropDown from '../../components/DropDown/DropDown.vue'
-    import emptiedStar from '../../assets/images/emptiedStar.png'
-    import filledStar from '../../assets/images/filledStar.png'
     import rentingJson from '../../assets/logements.json'
     import { useRoute } from 'vue-router'
 
@@ -71,16 +68,4 @@
     const rentingId = route.params.id
     const rentings = rentingJson
     const renting = rentings.find((renting) => renting.id === rentingId)
-    const stars = []
-
-    if(renting != undefined) {
-        for(let i=0; i<(renting.rating); i++ ) {
-            stars[i] = filledStar;
-        }
-        for(let i=0; i<5; i++ ) {
-            if(stars[i] !== filledStar) {
-                stars[i] = emptiedStar;
-            }
-        }
-    }
 </script>

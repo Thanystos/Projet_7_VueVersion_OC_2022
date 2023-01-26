@@ -1,10 +1,11 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
+    "outDir": "dist",
+    "target": "ES2022",
+    "noEmitOnError": false,
+    "strict": true,
+    "declaration": true,
     "moduleResolution": "node",
-    "importHelpers": true,
-    "isolatedModules": true,
-    "noEmit": true
-  }
+    "allowJs": true
+  },
 }

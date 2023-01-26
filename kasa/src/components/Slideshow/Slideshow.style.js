@@ -1,6 +1,6 @@
 import styled from '@magister_zito/vue3-styled-components'
 
-const slideProps = { pictures: Array }
+const slideProps = { pictures: Array, boxShadow: Boolean }
 
 const SlideContainer = styled.div`
     width: 100%;
@@ -73,8 +73,8 @@ const SlideNext = styled("img", slideProps)`
 SlideNext.name = 'SlideNext'
 
 const SlideNumber = styled("div", slideProps)`
-    width: 24px;
-    height: 32.4px;
+    width: 30px;
+    height: 22px;
     font-size: 18px;
     text-align: center;
     position: absolute;
@@ -82,6 +82,10 @@ const SlideNumber = styled("div", slideProps)`
     right: 48%;
     color: white;
     display: ${props => props.pictures.length < 2 ? 'none' : 'block'};
+    background-image: linear-gradient(
+        rgba(${props => props.boxShadow ? '255, 255, 255, 0' : '0, 0, 0, 0'}), 
+        rgba(${props => props.boxShadow ? '0, 0, 0, 0.5' : '0, 0, 0, 0'})
+    )
 `
 SlideNumber.name = 'SlideNumber'
 

@@ -27,9 +27,6 @@
     import arrowDown from "../../assets/images/arrowDown.png"
     import arrowUp from "../../assets/images/arrowUp.png"
 
-    const isOpen = ref(false)
-    let equipments = []
-
     const props = withDefaults(defineProps<{
         title?: string
         description?: string | Array<string>
@@ -39,6 +36,8 @@
         description: 'Non spécifié',
         renting: true
     })
+    const isOpen = props.renting? ref(true) : ref(false)
+    let equipments: Array<string> = []
 
     if(typeof(props.description)  == 'object') {
         equipments = [...props.description]

@@ -3,7 +3,7 @@
         <SlidePrev :src=prev :pictures=pictures @click="goToPrevious()" />
         <SlideImg :src=pictures[index] />
         <SlideNext :src=next :pictures=pictures @click="goToNext()" />
-        <SlideNumber :pictures=pictures>
+        <SlideNumber :box-shadow=boxShadow :pictures=pictures >
             {{ index + 1 }}/{{ pictures.length }}
         </SlideNumber>
     </SlideContainer>
@@ -17,9 +17,12 @@
 
     const index = ref(0)
 
-    const props = defineProps<{
+    const props = withDefaults(defineProps<{
         pictures: Array<string>
-    }>()
+        boxShadow?: boolean
+    }>(), {
+        boxShadow: true
+    })
 
     const goToPrevious = () => {
         const isFirstPicture = index.value === 0;

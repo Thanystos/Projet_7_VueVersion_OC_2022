@@ -1,5 +1,5 @@
 <template>
-    <CardWrapper :cover=cover>
+    <CardWrapper :cover=cover :boxShadow=boxShadow>
         <CardTitle>{{ title }}</CardTitle>
     </CardWrapper>
 </template>
@@ -21,7 +21,9 @@
     withDefaults(defineProps<{
         title?: string
         cover: string
+        boxShadow?: boolean
     }>(), {
-        title: 'Non spécifié'
+        title: 'Non spécifié',
+        boxShadow: true
     })
 </script>

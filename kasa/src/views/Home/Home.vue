@@ -16,9 +16,9 @@
                         :key="`${ rentingList.title }-${ rentingList.id }`"
                         :title=rentingList.title
                         :cover=rentingList.cover
+                        :box-shadow=rentingList.boxShadow
                     />
                 </RouterLink>
-
             </CardsContainer>
         </HomeContainer>
     </HomeWrapper>
@@ -29,6 +29,16 @@
     import sloganImg from '../../assets/images/sloganImg.png'
     import Card from '../../components/Card/Card.vue';
     import rentingJson from '../../assets/logements.json'
+    //import { isLight } from '../../functions/onImages.js'
 
-    const rentingsList = rentingJson
+    let rentingsList = rentingJson;
+
+    /*let isLightTab = [];
+    let i=0;
+
+    //for(let renting of rentingsList) {
+        //console.log(isLightTab[0] = isLight(renting.cover));
+        //i++;
+    //}
+   //console.log(isLight(rentingsList[0].cover));*/
 </script>
