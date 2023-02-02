@@ -1,6 +1,6 @@
 <template>
-    <DropDownContainer :renting=renting @click="isOpen=!isOpen">
-        <DropDownHeader :renting=renting>
+    <DropDownContainer :renting=renting :isOpen=isOpen @click="isOpen=!isOpen">
+        <DropDownHeader :isOpen=isOpen :renting=renting>
             <DropDownTitle>
                 {{ title }}
             </DropDownTitle>

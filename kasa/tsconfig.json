@@ -6,6 +6,9 @@
     "strict": true,
     "declaration": true,
     "moduleResolution": "node",
-    "allowJs": true
+    "allowJs": true,
+    "module": "ES2022",
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true
   },
 }

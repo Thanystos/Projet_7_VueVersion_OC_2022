@@ -1,8 +1,8 @@
 <template>
     <SlideContainer>
-        <SlidePrev :src=prev :pictures=pictures @click="goToPrevious()" />
+        <SlidePrev :src=prev :pictures=pictures :boxShadow=boxShadow @click="goToPrevious()" />
         <SlideImg :src=pictures[index] />
-        <SlideNext :src=next :pictures=pictures @click="goToNext()" />
+        <SlideNext :src=next :pictures=pictures :boxShadow=boxShadow @click="goToNext()" />
         <SlideNumber :box-shadow=boxShadow :pictures=pictures >
             {{ index + 1 }}/{{ pictures.length }}
         </SlideNumber>
@@ -33,5 +33,4 @@
         const isLastPicture = index.value === props.pictures.length - 1;
         index.value = isLastPicture ? 0 : index.value + 1;
     }
-
 </script>

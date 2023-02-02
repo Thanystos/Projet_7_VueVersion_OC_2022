@@ -24,21 +24,25 @@
     </HomeWrapper>
 </template>
 
-<script setup>
+<script setup lang="ts">
     import { HomeWrapper, HomeContainer, SloganContainer, SloganImg, Slogan, CardsContainer } from './Home.style';
     import sloganImg from '../../assets/images/sloganImg.png'
     import Card from '../../components/Card/Card.vue';
     import rentingJson from '../../assets/logements.json'
-    //import { isLight } from '../../functions/onImages.js'
+    import { isBright } from '../../functions/onImages.js'
 
     let rentingsList = rentingJson;
+    let i=-1;
 
-    /*let isLightTab = [];
-    let i=0;
-
-    //for(let renting of rentingsList) {
-        //console.log(isLightTab[0] = isLight(renting.cover));
-        //i++;
-    //}
-   //console.log(isLight(rentingsList[0].cover));*/
+    for(let renting of rentingsList) {
+        i++;
+        setTimeout(() => {
+            const image = new Image();
+        image.src = 'https://cors-anywhere.herokuapp.com/' + renting.cover;
+        image.crossOrigin = 'anonymous';
+        image.onload = function() {
+            renting.isBright = isBright(image);
+        }
+        }, 5000 * i);
+    }
 </script>
